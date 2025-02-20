@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "PBO-JAVA_25e95d26"
+        },
+        {
+            "type": "java",
+            "name": "listHewan",
+            "request": "launch",
+            "mainClass": "listHewan",
+            "projectName": "PBO-JAVA_25e95d26"
+        },
+        {
+            "type": "java",
+            "name": "petShop",
+            "request": "launch",
+            "mainClass": "petShop",
+            "projectName": "PBO-JAVA_25e95d26"
+        },
+        {
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "request": "attach",
+            "type": "chrome",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
