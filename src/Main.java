@@ -18,10 +18,10 @@ public class Main {
         ListPet.setHarga(-5000);
         System.out.println("======================================");
         
-        ListPet.setJumlahPet(2);
+        ListPet.setJumlahPet(-2);
         System.out.println("======================================");
 
-        ListPet.setdiscountRate(-1.2);
+        ListPet.setdiscountRate(1.2);
         System.out.println("======================================");
 
         ListPet.displayInfo();
