@@ -70,7 +70,7 @@ public class listPet {
     }
     public void displayInfo() {
         System.out.println("======================================");
-        System.out.println("============ Pet Shop Info ===========");
+        System.out.println(">>>          Pet Shop Info         <<<");
         System.out.println("======================================");
         System.out.println("Nama            : " + getNama());
         System.out.println("Harga           : " + String.format("Rp %.2f",  getHarga()));

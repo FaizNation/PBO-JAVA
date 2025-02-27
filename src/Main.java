@@ -26,8 +26,5 @@ public class Main {
 
         ListPet.displayInfo();
         System.out.println("**************************************");
-    
-
-
     }
 }
