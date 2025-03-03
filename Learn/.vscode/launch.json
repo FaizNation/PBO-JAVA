@@ -5,6 +5,20 @@
             "name": "Main",
             "request": "launch",
             "mainClass": "Main",
+            "projectName": "OOP JAVA_b92a45c5"
+        },
+        {
+            "type": "java",
+            "name": "MovieTicketReservation",
+            "request": "launch",
+            "mainClass": "MovieTicketReservation",
+            "projectName": "OOP JAVA_b92a45c5"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
             "projectName": "PBO-JAVA_25e95d26"
         },
         {

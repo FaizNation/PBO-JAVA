@@ -130,9 +130,8 @@ public class listPet {
 
     @Override
     public String toString() {
-        return "Nama: " + nama + "harga" + harga + "Jumlah Pet" + jumlahPet + "Jenis: " + jenis + "discount: "
-                + discountRate + "Kategori" + category;
+        return "Nama: " + nama + " harga :" + harga + " Jumlah Pet: " + jumlahPet + " Jenis: " + jenis + " discount: "
+                + discountRate + " Kategori: " + category;
 
     }
-
 }
