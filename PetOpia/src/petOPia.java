@@ -272,7 +272,7 @@ public class petOPia {
                     jumlahBeliList.add(jumlahBeli);
                     petDitemukan.setStokPet(petDitemukan.getStokPet() - jumlahBeli);
                     System.out.println("╔=======================================================================╗");
-                    System.out.printf("| %-69s |\n", jumlahBeli + " [SUCCESS] | ekor " + petDitemukan.getrasPet()
+                    System.out.printf("| %-69s |\n", " [SUCCESS] | " + jumlahBeli + " ekor " + petDitemukan.getrasPet()
                             + " telah ditambahkan ke keranjang.");
                     System.out.println("╚=======================================================================╝");
                 } else {
