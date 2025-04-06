@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public class soal1 {
     public static void main(String[] args) {
-        ArrayList<MenuPet> menuPet = new ArrayList<>();
+        ArrayList<MnuPet> menuPet = new ArrayList<>();
 
-        menuPet.add(new MenuPet("Anggora", 2500000, "Kucing"));
+        menuPet.add(new MnuPet("Anggora", 2500000, "Kucing"));
 
-        for (MenuPet menu : menuPet) {
+        for (MnuPet menu : menuPet) {
             System.out.println("\nDiskon: " + menu.hitungDiskon(7) + "%\n");
         }
     }

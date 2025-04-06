@@ -12,7 +12,7 @@ class Pet {
 
 class Anjing extends Pet {
     public Anjing(String rasPet) {
-        super(rasPet); 
+        super(rasPet);
     }
 
     @Override
@@ -23,7 +23,7 @@ class Anjing extends Pet {
 
 public class soal2 {
     public static void main(String[] args) {
-        Anjing p = new Anjing("Husky"); 
-        p.suara(); 
+        Anjing p = new Anjing("Husky");
+        p.suara();
     }
 }
