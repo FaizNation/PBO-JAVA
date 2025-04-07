@@ -112,8 +112,8 @@ public class serviceBird {
             boolean editing = true; 
 
             while (editing) { // 🖊️ Tampilkan menu edit burung
-                System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
-                System.out.printf("║ %-69s ║\n", "                         Mengedit pet: " + petEdit.getrasPet());
+                System.out.println("\n╔════════════════════════════════════════════════════════════════════════╗");
+                System.out.printf("║ %-70s ║\n", "                         Mengedit pet: " + petEdit.getrasPet());
                 function.displayMenuEditbird();// 📋 Tampilkan menu edit burung
                 int subPilihan = scanner.nextInt();
                 scanner.nextLine();

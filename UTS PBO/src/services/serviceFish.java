@@ -111,8 +111,8 @@ public class serviceFish {
             boolean editing = true;
             // ✏️ Gunakan switch-case untuk memilih bagian yang ingin diedit
             while (editing) { // 🖊️ Tampilkan menu edit ikan
-                System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
-                System.out.printf("║ %-69s ║\n", "                         Mengedit pet: " + petEdit.getrasPet());
+                System.out.println("\n╔════════════════════════════════════════════════════════════════════════╗");
+                System.out.printf("║ %-70s ║\n", "                         Mengedit pet: " + petEdit.getrasPet());
                 function.displayMenuEditFish(); // 📜 Menampilkan menu edit ikan 📜
                 int subPilihan = scanner.nextInt();
                 scanner.nextLine();

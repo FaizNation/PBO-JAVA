@@ -148,7 +148,6 @@ public class service {
                     break;
                 case 2:
                     displayCariPetJenis(scanner, listPet);// 🔍 cari berdasar jenis 🔍
-                    break;
                 case 0:
                     return;  // 🔙 Kembali ke menu sebelumnya
             }
@@ -193,8 +192,7 @@ public class service {
         } else {
             // ❌ Jika tidak ditemukan data pet dengan harga tersebut
             System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
-            System.out.printf("║ %-69s ║\n",
-                    " [ERROR] | Data pet dengan harga Rp" + hargaDicari + " tidak ditemukan.  |");
+            System.out.printf("║ %-69s ║\n"," [ERROR] | Data pet dengan harga Rp" + hargaDicari + " tidak ditemukan.  |");
             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
         }
     }
@@ -225,19 +223,21 @@ public class service {
             System.out.println("╠═══════════════════════════════════════════════════════════════════════╣");
             System.out.printf("║ %-3s | %-13s | %-17s | %-4s | %-9s | %-8s ║\n",
                     "No", "Ras", "Harga", "Stok", "Diskon", "jenis");
-            System.out.println("╠═════|═══════════════|═══════════════════|══════|═══════════|══════════");
+            System.out.println("╠═════|═══════════════|═══════════════════|══════|═══════════|══════════╣");
             // 🔁 Tampilkan setiap data pet yang sesuai
             for (petList pet : hasil) {
                 String hargaFormatted = String.format("%, .2f", pet.getHargaPet()).replace(",", ".");
                 System.out.printf("║ %-3s | %-13s | Rp%-15s | %-4d | %-3.0f%%      | %-8s ║\n", i,
                         pet.getrasPet(), hargaFormatted, pet.getStokPet(),
                         pet.getDiskonPet() * 100, pet.getjenisPet());
-                System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
                 i++;
             }
+            System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
         } else {
             // ❌ Jika tidak ditemukan data pet yang cocok
-            System.out.println("\nPet dengan jenis '" + jenisDicari + "' dan ras '" + rasDicari + "' tidak ditemukan.");
+            System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
+            System.out.printf("║ %-69s ║\n" , "Pet dengan jenis '" + jenisDicari + "' dan ras '" + rasDicari + "' tidak ditemukan.");
+            System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
         }
     }
 
@@ -245,7 +245,7 @@ public class service {
     public static void beliPet(Scanner scanner) {
          // 🎉 Header
         System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
-        System.out.println("|                  Silahkan pilih Pet yang Anda Suka!                   |");
+        System.out.println("║                  Silahkan pilih Pet yang Anda Suka!                   ║");
         System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
         displayAllPets(); // 🐾 Tampilkan daftar pet sebelum membeli 🐾
         // 📋 Kumpulan semua data pet dari berbagai jenis
