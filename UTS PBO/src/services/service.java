@@ -1,23 +1,23 @@
-package services;
+package services; // package services
+// 📦 Import yang diperlukan untuk aplikasi 📦
+import java.time.LocalDate; // 📦 Import LocalDate untuk menyimpan tanggal 📦
+import java.util.ArrayList; // 📦 Import ArrayList untuk menyimpan daftar pet yang tersedia 📦
+import java.util.Comparator; // 📦 Import Comparator untuk membandingkan objek 📦
+import java.util.List; // 📦 Import List untuk menyimpan daftar pet yang tersedia 📦
+import java.util.Scanner; // 📦 Import Scanner untuk membaca input dari pengguna 📦
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
+import models.*; // 📦 Import model-model pet yang digunakan dalam aplikasi 📦
+import utils.function; // 📦 Import function untuk menampilkan function yang diperlukan 📦
 
-import models.*;
-import utils.function;
+public class service { 
+    static ArrayList<petList> listPet = new ArrayList<>();  // 📦 ArrayList untuk menyimpan daftar pet yang tersedia 📦
 
-public class service {
-    static ArrayList<petList> listPet = new ArrayList<>();
-
-    public static ArrayList<kucing> listKucing = new ArrayList<>();
-    public static ArrayList<anjing> listAnjing = new ArrayList<>();
-    public static ArrayList<burung> listBurung = new ArrayList<>();
-    public static ArrayList<ikan> listIkan = new ArrayList<>();
+    public static ArrayList<kucing> listKucing = new ArrayList<>(); // 📦 ArrayList untuk menyimpan daftar kucing 📦
+    public static ArrayList<anjing> listAnjing = new ArrayList<>(); // 📦 ArrayList untuk menyimpan daftar anjing 📦
+    public static ArrayList<burung> listBurung = new ArrayList<>(); // 📦 ArrayList untuk menyimpan daftar burung 📦
+    public static ArrayList<ikan> listIkan = new ArrayList<>();     // 📦 ArrayList untuk menyimpan daftar ikan 📦
     static {
-        listPet();
+        listPet(); // 📦 Memanggil method listPet untuk mengisi daftar pet awal 📦
     }
 
     public static void listPet() {
@@ -52,8 +52,7 @@ public class service {
                 "15-30 gram", " Gacor dan Panjang", LocalDate.of(2023, 5, 24), "-"));
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌Function display Menu pets
     public static void displayPets(Scanner scanner) {
         while (true) {
             function.displayMenuTampilkan();// 🐾 Menampilkan menu untuk menampilkan daftar pet 🐾
@@ -67,7 +66,7 @@ public class service {
                     displayPetsHarga();// 💰 Menampilkan pet berdasarkan harga 💰
                     break;
                 case 3:
-                    displayJenis(scanner);
+                    displayJenis(scanner);// 🐾 Menampilkan pet berdasarkan jenis 🐾
                 case 0:
                     return;// 🔙 Kembali ke menu utama 🔙
             }
@@ -75,47 +74,48 @@ public class service {
         }
     }
 
+    // 📌Function display jenis pets
     public static void displayJenis(Scanner scanner) {
-        function.displayDaftarJenis();
-        System.out.print("Pilih jenis pet yang ingin ditampilkan: ");
+        function.displayDaftarJenis(); // 📝 Menampilkan daftar jenis pet yang tersedia
+        System.out.print("Pilih jenis pet yang ingin ditampilkan: "); // 🎯 Meminta input pilihan dari user
         int jenis = scanner.nextInt();
         scanner.nextLine();
 
         switch (jenis) {
             case 1:
-                serviceCat.displayDetailCat(scanner); // Menampilkan semua kucing
+                serviceCat.displayDetailCat(scanner);  // 🐱 Menampilkan detail semua kucing
                 break;
             case 2:
-                serviceDog.displayDetailDoggy(scanner);
+                serviceDog.displayDetailDoggy(scanner); // 🐶 Menampilkan detail semua anjing
                 break;
             case 3:
-                serviceFish.displayDetailIwak(scanner);
+                serviceFish.displayDetailIwak(scanner); //🐟 Menampilkan detail semua ikan
                 break;
             case 4:
-                serviceBird.displayDetailbuwung(scanner);
+                serviceBird.displayDetailbuwung(scanner); // 🐦 Menampilkan detail semua burung
                 break;
             case 0:
                 return;// 🔙 Kembali ke menu utama 🔙
         }
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌 Function untuk menampilkan seluruh data hewan peliharaan
     public static void displayAllPets() {
-        List<petList> listPet = new ArrayList<>();
-
-        listPet.addAll(listKucing);
-        listPet.addAll(listAnjing);
-        listPet.addAll(listBurung);
-        listPet.addAll(listIkan);
-
+        List<petList> listPet = new ArrayList<>(); // 🧺 Membuat list kosong untuk menyimpan semua pet
+        // ➕ Menambahkan seluruh daftar hewan dari masing-masing jenis ke listPet
+        listPet.addAll(listKucing); // 🐱
+        listPet.addAll(listAnjing); // 🐶
+        listPet.addAll(listBurung); // 🐦
+        listPet.addAll(listIkan);   // 🐟
+        // ❗ Cek apakah daftar pet kosong
         if ((listPet == null || listPet.isEmpty())) {
             System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
             System.out.println("║                     Tidak ada data pet yang tersedia                  |");
             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
             return;
         } else {
-            int i = 1;
+            int i = 1; // 🔢 Nomor urut
+             // 📋 Header tampilan daftar pet
             System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
             System.out.println("║                           Daftar Semua Pet                            ║");
             System.out.println("╠═══════════════════════════════════════════════════════════════════════╣");
@@ -124,26 +124,22 @@ public class service {
             System.out.println("╠═════|═══════════════|═══════════════════|══════|═══════════|══════════╣");
             // 🔄 Loop untuk menampilkan setiap pet dalam daftar 🔄
             for (petList pet : listPet) {
-                // 💰 Format harga dan replace untuk mengubah harga agar lebih rapi dalam
-                // tampilan
+                // 💰 Format harga agar tampil lebih rapi (gunakan titik sebagai pemisah ribuan)
                 String hargaFormatted = String.format("%, .2f", pet.getHargaPet()).replace(",", ".");
                 System.out.printf("║ %-3s | %-13s | Rp%-15s | %-4d | %-3.0f%%      | %-8s ║\n", i,
                         pet.getrasPet(), hargaFormatted, pet.getStokPet(),
                         pet.getDiskonPet() * 100, pet.getjenisPet());
-                i++; // 🔢 Menambah nomor urut
-
+                i++; // ⬆️ Naikkan nomor urut
             }
             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
         }
-
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌 Function untuk menampilkan menu pencarian hewan peliharaan
     public static void displayCari(Scanner scanner) {
 
         while (true) {
-            function.displayMenuCari();
+            function.displayMenuCari(); // 📋 Menampilkan menu pencarian (berdasarkan harga / jenis)
             int Cari = scanner.nextInt();
             scanner.nextLine();
             switch (Cari) {
@@ -154,29 +150,28 @@ public class service {
                     displayCariPetJenis(scanner, listPet);// 🔍 cari berdasar jenis 🔍
                     break;
                 case 0:
-                    return;
+                    return;  // 🔙 Kembali ke menu sebelumnya
             }
         }
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌 Function untuk mencari pet berdasarkan harga yang diinput user
     public static void displayCariPetHarga(Scanner scanner, ArrayList<petList> listpet) {
-        List<petList> listPet = new ArrayList<>();
+        List<petList> listPet = new ArrayList<>(); // 🧺 Tempat gabungan semua list pet
 
-        listPet.addAll(listKucing);
-        listPet.addAll(listAnjing);
-        listPet.addAll(listBurung);
-        listPet.addAll(listIkan);
+        listPet.addAll(listKucing); // 🐱
+        listPet.addAll(listAnjing); // 🐶
+        listPet.addAll(listBurung); // 🐦
+        listPet.addAll(listIkan);   // 🐟
 
-        System.out.print("Masukkan harga pet yang dicari: ");
+        System.out.print("Masukkan harga pet yang dicari: "); // 🧾 Input harga dari user
         double hargaDicari = scanner.nextDouble();
         scanner.nextLine();
 
-        // 🔎 Panggil cariPetList dari class petList untuk mencari pet berdasarkan harga
-
+        // 🔍 Panggil method dari class petList untuk cari pet dengan harga tertentu
         List<petList> hasil = petList.cariSemuaPetByHarga(listPet, hargaDicari);
 
+        // ✅ Jika hasil ditemukan
         if (hasil != null) {
             int i = 1;// 📌 Untuk penomoran daftar 📌
             System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
@@ -185,8 +180,9 @@ public class service {
             System.out.printf("║ %-3s | %-13s | %-17s | %-4s | %-9s | %-8s ║\n",
                     "No", "Ras", "Harga", "Stok", "Diskon", "Jenis");
             System.out.println("╠═════|═══════════════|═══════════════════|══════|═══════════|══════════╣");
-            // 💰 Format harga agar lebih rapi (menggunakan koma sebagai pemisah ribuan) 💰
+            // 🔁 Tampilkan semua pet yang cocok dengan harga
             for (petList pet : hasil) {
+                // 💸 Format harga dengan titik sebagai pemisah ribuan
                 String hargaFormatted = String.format("%, .2f", pet.getHargaPet()).replace(",", ".");
                 System.out.printf("║ %-3s | %-13s | Rp%-15s | %-4d | %-3.0f%%      | %-8s ║\n", i,
                         pet.getrasPet(), hargaFormatted, pet.getStokPet(),
@@ -195,35 +191,32 @@ public class service {
             }
             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
         } else {
-            // ⚠️ Jika pet tidak ditemukan ⚠️
+            // ❌ Jika tidak ditemukan data pet dengan harga tersebut
             System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
             System.out.printf("║ %-69s ║\n",
                     " [ERROR] | Data pet dengan harga Rp" + hargaDicari + " tidak ditemukan.  |");
             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
         }
-
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
-
+    // 📌 Function untuk mencari pet berdasarkan jenis dan ras
     public static void displayCariPetJenis(Scanner scanner, ArrayList<petList> listPet) {
-        List<petList> listFusion = new ArrayList<>();
-        listFusion.addAll(listKucing);
-        listFusion.addAll(listAnjing);
-        listFusion.addAll(listBurung);
-        listFusion.addAll(listIkan);
+        List<petList> listFusion = new ArrayList<>(); // 🧺 List gabungan semua jenis pet
+        // ➕ Tambahkan semua data dari setiap jenis ke dalam listFusion
+        listFusion.addAll(listKucing); // 🐱
+        listFusion.addAll(listAnjing); // 🐶
+        listFusion.addAll(listBurung); // 🐦
+        listFusion.addAll(listIkan);   // 🐟
 
-        System.out.print("\nMasukkan jenis pet yang dicari: ");// 📌 Manipulasi string untuk mengkorversi huruf jadi
-                                                               // kecil 📌
-        String jenisDicari = scanner.nextLine().toLowerCase();
+        System.out.print("\nMasukkan jenis pet yang dicari: ");// 📝 Input jenis pet dari user
+        String jenisDicari = scanner.nextLine().toLowerCase();//Manipulasi string untuk mengkorversi huruf jadi kecil
 
-        System.out.print("Masukkan ras pet yang dicari: ");
-        String rasDicari = scanner.nextLine().toLowerCase();
+        System.out.print("Masukkan ras pet yang dicari: ");// 📝 Input ras pet dari user
+        String rasDicari = scanner.nextLine().toLowerCase();//Manipulasi string untuk mengkorversi huruf jadi kecil
 
         // 🔄 Searching menggunakan Comparator 🔄
         List<petList> hasil = petList.cariPetListJenis(listFusion, jenisDicari, rasDicari);
-
+        // ✅ Jika hasil ditemukan
         if (hasil != null) {
             int i = 1;
             System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
@@ -233,6 +226,7 @@ public class service {
             System.out.printf("║ %-3s | %-13s | %-17s | %-4s | %-9s | %-8s ║\n",
                     "No", "Ras", "Harga", "Stok", "Diskon", "jenis");
             System.out.println("╠═════|═══════════════|═══════════════════|══════|═══════════|══════════");
+            // 🔁 Tampilkan setiap data pet yang sesuai
             for (petList pet : hasil) {
                 String hargaFormatted = String.format("%, .2f", pet.getHargaPet()).replace(",", ".");
                 System.out.printf("║ %-3s | %-13s | Rp%-15s | %-4d | %-3.0f%%      | %-8s ║\n", i,
@@ -242,29 +236,29 @@ public class service {
                 i++;
             }
         } else {
-            // ⚠️ Jika pet tidak ditemukan ⚠️
+            // ❌ Jika tidak ditemukan data pet yang cocok
             System.out.println("\nPet dengan jenis '" + jenisDicari + "' dan ras '" + rasDicari + "' tidak ditemukan.");
         }
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌 Function untuk membeli pet
     public static void beliPet(Scanner scanner) {
+         // 🎉 Header
         System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
         System.out.println("|                  Silahkan pilih Pet yang Anda Suka!                   |");
         System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
         displayAllPets(); // 🐾 Tampilkan daftar pet sebelum membeli 🐾
+        // 📋 Kumpulan semua data pet dari berbagai jenis
         List<petList> listPet = new ArrayList<>();
-
-        listPet.addAll(listKucing);
-        listPet.addAll(listAnjing);
-        listPet.addAll(listBurung);
-        listPet.addAll(listIkan);
-        
+        listPet.addAll(listKucing); // 🐱
+        listPet.addAll(listAnjing); // 🐶
+        listPet.addAll(listBurung); // 🐦
+        listPet.addAll(listIkan);   // 🐠
+        // 🛒 Inisialisasi keranjang belanja & jumlah beli
         ArrayList<petList> keranjang = new ArrayList<>();
         ArrayList<Integer> jumlahBeliList = new ArrayList<>();
         boolean beliLagi = true;
-
+        // 🔁 Loop pembelian
         while (beliLagi) {
             System.out.print("\nMasukkan nama ras pet yang ingin dibeli: ");
             String rasPet = scanner.nextLine();
@@ -279,10 +273,10 @@ public class service {
             }
 
             if (petDitemukan != null) {
-                System.out.print("Masukkan jumlah yang ingin dibeli: ");
+                System.out.print("Masukkan jumlah yang ingin dibeli: ");// 📝 Input jumlah beli dari user
                 int jumlahBeli = scanner.nextInt();
                 scanner.nextLine();
-
+                // 📦 Validasi jumlah beli
                 if (jumlahBeli > 0 && jumlahBeli <= petDitemukan.getStokPet()) {
                     keranjang.add(petDitemukan);
                     jumlahBeliList.add(jumlahBeli);
@@ -291,26 +285,24 @@ public class service {
                     System.out.printf("║ %-69s ║\n", " [SUCCESS] | " + jumlahBeli + " ekor " + petDitemukan.getrasPet()
                             + " telah ditambahkan ke keranjang.");
                     System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
-                } else {
+                } else { // ❌ Jika stok tidak cukup atau jumlah tidak valid
                     System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
                     System.out.printf("║ %-69s ║\n", " [ERROR] | Maaf, stok tidak mencukupi atau jumlah tidak valid.");
                     System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
                 }
-            } else {
+            } else { // ❌ Jika pet tidak ditemukan
                 System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
                 System.out.printf("║ %-69s ║\n", " [ERROR] | Pet dengan ras '" + rasPet + "' tidak ditemukan.");
                 System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
             }
-
-            System.out.print("Ingin beli pet lain? (true/false): ");
+            System.out.print("Ingin beli pet lain? (true/false): ");// 📝 Input pilihan beli lagi dari user
             beliLagi = scanner.nextBoolean();
             scanner.nextLine();
         }
-
         // 📜 Tampilkan detail pembelian 📜
         if (!keranjang.isEmpty()) {
-            double totalHarga = 0;
-            double totalDiskon = 0;
+            double totalHarga = 0; // 💰 Total harga
+            double totalDiskon = 0; // 💸 Total diskon
 
             System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
             System.out.println("║                         Detail Pembelian Pet                          ║");
@@ -318,29 +310,28 @@ public class service {
             System.out.printf("║ %-15s | %-8s | %-15s | %-22s ║\n", "Ras Pet", "Jumlah", "Harga Satuan",
                     "       Subtotal");
             System.out.println("╠═════════════════|══════════|═════════════════|════════════════════════╣");
-
+            // 🧮 Loop semua item di keranjang
             for (int i = 0; i < keranjang.size(); i++) {
-                petList pet = keranjang.get(i);
-                int jumlah = jumlahBeliList.get(i);
-                double hargaAsli = pet.getHargaPet() * jumlah;
-                double diskon = hargaAsli * pet.getDiskonPet();
-                double hargaTotal = hargaAsli - diskon;
-
+                petList pet = keranjang.get(i); // Ambil pet dari keranjang
+                int jumlah = jumlahBeliList.get(i); // Ambil jumlah beli dari list
+                double hargaAsli = pet.getHargaPet() * jumlah; // Hitung harga asli
+                double diskon = hargaAsli * pet.getDiskonPet(); // Hitung diskon
+                double hargaTotal = hargaAsli - diskon; // Hitung total harga setelah diskon
+                // 💵 Format harga agar tampil lebih rapi (gunakan titik sebagai pemisah ribuan)
                 String subtotalFormatted = String.format("%,.2f", hargaTotal).replace(",", ".");
                 String hargaFormatted = String.format("%,.2f", pet.getHargaPet()).replace(",", ".");
                 System.out.printf("║ %-15s | %-8d | Rp%-13s | Rp%-20s ║\n",
                         pet.getrasPet(), jumlah, hargaFormatted, subtotalFormatted);
-
-                totalHarga += hargaTotal;
-                totalDiskon += diskon;
-            }
+                totalHarga += hargaTotal; // Tambah total harga
+                totalDiskon += diskon; // Tambah total diskon
+            } // 💸 Total akhir
             String totalDiskonFormatted = String.format("%,.2f", totalDiskon).replace(",", ".");
             String totalHargaFormatted = String.format("%,.2f", totalHarga).replace(",", ".");
             System.out.println("╠═══════════════════════════════════════════════════════════════════════╣");
             System.out.printf("║ %-44s : Rp%-20s ║\n", "Total Diskon", totalDiskonFormatted);
             System.out.printf("║ %-44s : Rp%-20s ║\n", "Total Bayar", totalHargaFormatted);
             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
-
+            // 🎉 Penutup sukses
             System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
             System.out.println("║             Pembelian berhasil! Stok pet telah diperbarui             ║");
             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
@@ -349,61 +340,60 @@ public class service {
             System.out.println("║                Terimakasih Telah Membeli Pet Di Petopia               ║");
             System.out.println("║                                                                       ║");
             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
-        } else {
+        } else { // ❌ Jika tidak ada pembelian
             System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
             System.out.println("║                         Pembelian dibatalkan.                         ║");
             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
         }
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌 Function untuk menampilkan daftar pet berdasarkan harga
     public static void displayPetsHarga() {
+        // 📦 Gabungkan semua pet ke dalam satu list
         List<petList> listPet = new ArrayList<>();
-
-        listPet.addAll(listKucing);
-        listPet.addAll(listAnjing);
-        listPet.addAll(listBurung);
-        listPet.addAll(listIkan);
-
+        listPet.addAll(listKucing); // 🐱
+        listPet.addAll(listAnjing); // 🐶
+        listPet.addAll(listBurung); // 🐦
+        listPet.addAll(listIkan);   // 🐠
         // 🔄 Sorting menggunakan Comparator 🔄
         listPet.sort(Comparator.comparingDouble(petList::getHargaPet));
         int i = 1;
+        // 🎯 Header tampilan
         System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
         System.out.println("|                Daftar Semua Pet Berdasar Harga Termurah               |");
         System.out.println("╠═══════════════════════════════════════════════════════════════════════╣");
         System.out.printf("| %-3s | %-13s | %-17s | %-4s | %-9s | %-8s |\n",
                 "No", "Ras", "Harga", "Stok", "Diskon", "Jenis");
         System.out.println("╠═════|═══════════════|═══════════════════|══════|═══════════|══════════╣");
-        // 📜 Menampilkan daftar mahasiswa setelah sorting 📜
+        // 📜 Menampilkan daftar pet setelah sorting 📜
         for (petList pet : listPet) {
             String hargaFormatted = String.format("%, .2f", pet.getHargaPet()).replace(",", ".");
             System.out.printf("| %-3s | %-13s | Rp%-15s | %-4d | %-3.0f%%      | %-8s |\n", i,
                     pet.getrasPet(), hargaFormatted, pet.getStokPet(),
                     pet.getDiskonPet() * 100, pet.getjenisPet());
             i++;
-
-        }
+        }   
         System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
     }
 
+    // 📌 Function untuk mengedit pet
     public static void editPpet(Scanner scanner) {
-        function.displayDaftarJenis();
-        System.out.print("\nMasukkan nomor pet yang ingin diedit: ");
+        function.displayDaftarJenis(); // 📝 Menampilkan daftar jenis pet yang tersedia
+        System.out.print("\nMasukkan nomor pet yang ingin diedit: "); // 📝 Input nomor pet dari user
         int noEdit = scanner.nextInt();
         scanner.nextLine();
         switch (noEdit) {
             case 1:
-                serviceCat.editCats(scanner); // Menampilkan semua kucing
+                serviceCat.editCats(scanner); // 🐱 Edit kucing
                 break;
             case 2:
-                serviceDog.editDoggy(scanner);
+                serviceDog.editDoggy(scanner);// 🐶 Edit anjing
                 break;
             case 3:
-                serviceFish.editIwak(scanner);
+                serviceFish.editIwak(scanner); // 🐟 Edit ikan
                 break;
             case 4:
-                serviceBird.editbuwung(scanner);
+                serviceBird.editbuwung(scanner); // 🐦 Edit burung
                 break;
             case 0:
                 return;// 🔙 Kembali ke menu utama 🔙

@@ -2,8 +2,7 @@ package utils;
 
 public class function {
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌 Function display Judul (Header)
     public static void dislpayJudul() {
         System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
         System.out.println("║>>>                        SELAMAT DATANG DI                        <<<║");
@@ -12,8 +11,7 @@ public class function {
         System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌Function display Menu
     public static void displayMenu() {
         System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
         System.out.println("║                                MENU                                   ║");
@@ -28,9 +26,7 @@ public class function {
 
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
-
+    // 📌Function display menu cari (menu 2)
     public static void displayMenuCari() {
         System.out.println("\n╔════════════════════════════════════════════════════════════════════════╗");
         System.out.println("║                                MENU                                    ║");
@@ -42,8 +38,7 @@ public class function {
         System.out.print("Pilihan: ");
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌Function display menu tampilkan (menu 1)
     public static void displayMenuTampilkan() {
         System.out.println("\n╔════════════════════════════════════════════════════════════════════════╗");
         System.out.println("║                                MENU                                    ║");
@@ -56,8 +51,7 @@ public class function {
         System.out.print("Pilihan: ");
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌Function display menu edit kucing
     public static void displayMenuEditCats() {
         System.out.println("╠════════════════════════════════════════════════════════════════════════╣");
         System.out.println("║  1. ║ Ubah Nama                                                        ║");
@@ -73,6 +67,7 @@ public class function {
         System.out.print("Pilih bagian yang ingin diedit: ");
     }
 
+    // 📌Function display menu edit anjing
     public static void displayMenuEditDogs() {
         System.out.println("╠════════════════════════════════════════════════════════════════════════╣");
         System.out.println("║  1. ║ Ubah Nama                                                        ║");
@@ -88,6 +83,7 @@ public class function {
         System.out.print("Pilih bagian yang ingin diedit: ");
     }
 
+    // 📌Function display menu edit ikan
     public static void displayMenuEditFish() {
         System.out.println("╠════════════════════════════════════════════════════════════════════════╣");
         System.out.println("║  1. ║ Ubah Nama                                                        ║");
@@ -103,6 +99,7 @@ public class function {
         System.out.print("Pilih bagian yang ingin diedit: ");
     }
 
+    // 📌Function display menu edit burung
     public static void displayMenuEditbird() {
         System.out.println("╠════════════════════════════════════════════════════════════════════════╣");
         System.out.println("║  1. ║ Ubah Nama                                                        ║");
@@ -118,6 +115,7 @@ public class function {
         System.out.print("Pilih bagian yang ingin diedit: ");
     }
 
+    // 📌Function display rating 
     public static void displayRating() {
         System.out.println("\n╔════════════════════════════════════════════════════════════════════════╗");
         System.out.println("║                           Penjelasan Rating                            ║");
@@ -130,6 +128,7 @@ public class function {
         System.out.println("╚════════════════════════════════════════════════════════════════════════╝");
     }
 
+    // 📌Function display vaksin
     public static void displayVaksin() {
         System.out.println("\n╔════════════════════════════════════════════════════════════════════════╗");
         System.out.println("║                           Penjelasan Vaksin                            ║");
@@ -141,8 +140,7 @@ public class function {
         System.out.println("╚════════════════════════════════════════════════════════════════════════╝");
     }
 
-    // 📌================================📋 Function
-    // 📋================================📌
+    // 📌Function display by faiz nation (Footer)
     public static void displayFaizNation() {
         System.out.println("╔════════════════════════════════════════════════════════════════════════╗");
         System.out.println("║>>>           TERIMAKASIH TELAH MENGGUNAKAN APLIKASI SAYA            <<<║");
@@ -156,6 +154,7 @@ public class function {
         System.out.println("╚════════════════════════════════════════════════════════════════════════╝");
     }
 
+    // 📌Function display daftar jenis pet
     public static void displayDaftarJenis() {
         System.out.println("\n╔════════════════════════════════════════════════════════════════════════╗");
         System.out.println("║                           Jenis Pet Yang Tersedia                      ║");

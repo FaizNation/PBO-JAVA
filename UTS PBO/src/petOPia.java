@@ -1,21 +1,19 @@
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import services.service;
-import utils.function;
+import java.util.ArrayList; // 📦 Import ArrayList untuk menyimpan daftar pet yang tersedia 📦
+import java.util.InputMismatchException; // 📦 Import InputMismatchException untuk menangani kesalahan input pengguna 📦
+import java.util.Scanner; // 📦 Import Scanner untuk membaca input dari pengguna 📦
+import models.petList; // 📦 Import petList untuk menyimpan data pet yang tersedia 📦
+import services.service; // 📦 Import service untuk mengelola logika aplikasi 📦
+import utils.function; // 📦 Import function untuk menampilkan menu dan judul aplikasi 📦
 
 public class petOPia {
     // 🐾 ArrayList untuk menyimpan daftar pet yang tersedia 🐾
     static ArrayList<petList> lisPet = new ArrayList<>();
-
     public static void main(String[] args) throws Exception {
         function.dislpayJudul();// 🎉 menampilkan judul aplikasi 🎉
-        try (Scanner scanner = new Scanner(System.in)) {
-
-
+        try (Scanner scanner = new Scanner(System.in)) { 
 
             while (true) { // 🔄 Looping menu utama 🔄 
-                try {
+                try { 
                     function.displayMenu(); // 📜 menampilkan menu utama 📜
                     int pilihan = scanner.nextInt();
                     scanner.nextLine();
@@ -36,8 +34,7 @@ public class petOPia {
                             function.displayFaizNation(); // 😎 menampilkan by faiz nation 😎
                             return;
                         default:
-                            // ❌ Menampilkan pesan error jika pilihan tidak valid ❌
-
+                            // ❌ Menampilkan pesan error jika pilihan tidak valid 
                             System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
                             System.out.printf("║ %-69s ║\n", " [ERROR] | INPUT TIDAK VALID, SILAHKAN COBALAGI.");
                             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
