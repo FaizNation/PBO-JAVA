@@ -9,7 +9,7 @@ public class petOPia {
     // 🐾 ArrayList untuk menyimpan daftar pet yang tersedia 🐾
     static ArrayList<petList> lisPet = new ArrayList<>();
     public static void main(String[] args) throws Exception {
-        function.dislpayJudul();// 🎉 menampilkan judul aplikasi 🎉
+        function.displayJudul();// 🎉 menampilkan judul aplikasi 🎉
         try (Scanner scanner = new Scanner(System.in)) { 
 
             while (true) { // 🔄 Looping menu utama 🔄 

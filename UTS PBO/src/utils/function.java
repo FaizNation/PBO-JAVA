@@ -3,12 +3,30 @@ package utils;
 public class function {
 
     // 📌 Function display Judul (Header)
-    public static void dislpayJudul() {
-        System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
-        System.out.println("║>>>                        SELAMAT DATANG DI                        <<<║");
-        System.out.println("║>>                          <<< PETOPIA >>>                          <<║");
-        System.out.println("║>>>                    Temukan Sahabat Terbaikmu                    <<<║");
-        System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
+    public static void displayJudul() {
+        // 🎨 Kode warna ANSI
+        String white = "\u001B[37m";   // Warna putih untuk teks biasa
+        String yellow = "\u001B[33m";  // Warna kuning khusus untuk kata "PETOPIA"
+        String reset = "\u001B[0m";    // Reset warna ke default terminal
+    
+        String[] lines = {
+            white + "╔═══════════════════════════════════════════════════════════════════════╗",
+            "║>>>                        SELAMAT DATANG DI                        <<<║",
+            // ✨ Bagian ini akan menampilkan kata PETOPIA dengan warna kuning
+            "║>>                          <<< " + yellow + "PETOPIA" + white + " >>>                          <<║",
+            "║>>>                    Temukan Sahabat Terbaikmu                    <<<║",
+            "╚═══════════════════════════════════════════════════════════════════════╝" + reset
+        };
+        // 🔁 Loop untuk mencetak setiap baris dengan efek ketik
+        for (String line : lines) {
+            for (char c : line.toCharArray()) {
+                System.out.print(c); // Cetak karakter satu per satu
+                // ⏱️ Delay 2ms antar karakter untuk efek ketik
+                try { Thread.sleep(2); } catch (InterruptedException e) { }
+            }
+            System.out.println();  // ❌ Jika thread terganggu, abaikan saja
+            try { Thread.sleep(100); } catch (InterruptedException e) { }
+        }
     }
 
     // 📌Function display Menu
@@ -23,7 +41,6 @@ public class function {
         System.out.println("║  5. ║ Keluar                                                          ║");
         System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
         System.out.print("Pilihan: ");
-
     }
 
     // 📌Function display menu cari (menu 2)
@@ -142,17 +159,38 @@ public class function {
 
     // 📌Function display by faiz nation (Footer)
     public static void displayFaizNation() {
-        System.out.println("╔════════════════════════════════════════════════════════════════════════╗");
-        System.out.println("║>>>           TERIMAKASIH TELAH MENGGUNAKAN APLIKASI SAYA            <<<║");
-        System.out.println("║>>                  <<< FADLY FAIS FAJARRUDDIN >>>                    <<║");
-        System.out.println("║>>>                           24111814015                            <<<║");
-        System.out.println("╠════════════════════════════════════════════════════════════════════════╣");
-        System.out.println("║>>>                                                                  <<<║");
-        System.out.println("║>>                     ehh udah lebaran aja nih wkwk                  <<║");
-        System.out.println("║>>                  Minal Aidzin Wal Faidzin yagess!!!                <<║");
-        System.out.println("║>>>                                                                  <<<║");
-        System.out.println("╚════════════════════════════════════════════════════════════════════════╝");
+        // 🎨 Kode warna ANSI
+        String white = "\u001B[37m";   // Warna putih untuk teks biasa
+        String yellow = "\u001B[33m";  // Warna kuning khusus untuk kata "PETOPIA"
+        String reset = "\u001B[0m";    // Reset warna ke default terminal
+        // 📝 Daftar baris yang akan ditampilkan dengan kombinasi warna
+        String[] lines = {
+            white + "╔════════════════════════════════════════════════════════════════════════╗",
+            "║>>>           TERIMAKASIH TELAH MENGGUNAKAN APLIKASI SAYA            <<<║",
+            "║>>                  <<< " + yellow + "FADLY FAIS FAJARRUDDIN" + white + " >>>                    <<║",
+            "║>>>                           24111814015                            <<<║",
+            "╠════════════════════════════════════════════════════════════════════════╣",
+            "║>>>                                                                  <<<║",
+            "║>>                    " + yellow + "ehh udah lebaran aja nih wkwk" + white + "                   <<║",
+            "║>>                 " + yellow + "Minal Aidzin Wal Faidzin yagess!!!" + white + "                 <<║",
+            "║>>>                                                                  <<<║",
+            "╚════════════════════════════════════════════════════════════════════════╝" + reset
+        };
+        // 🖋️ Efek ketik baris demi baris
+        for (String line : lines) {
+            for (char c : line.toCharArray()) {
+                System.out.print(c); // Cetak karakter satu per satu
+                try { Thread.sleep(2); 
+                } catch (InterruptedException e) { 
+                     }// ⏳ Delay antar karakter (2ms untuk efek ketik cepat)
+            }
+            System.out.println(); // Baris baru setelah selesai satu baris
+            try { Thread.sleep(80); // ⏳ Delay antar baris
+            } catch (InterruptedException e) { 
+            }
+        }
     }
+    
 
     // 📌Function display daftar jenis pet
     public static void displayDaftarJenis() {
@@ -166,4 +204,5 @@ public class function {
         System.out.println("║   0. ║ Kembali                                                         ║");
         System.out.println("╚════════════════════════════════════════════════════════════════════════╝");
     }
+
 }
