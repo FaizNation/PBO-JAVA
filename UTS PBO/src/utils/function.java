@@ -5,27 +5,33 @@ public class function {
     // 📌 Function display Judul (Header)
     public static void displayJudul() {
         // 🎨 Kode warna ANSI
-        String white = "\u001B[37m";   // Warna putih untuk teks biasa
-        String yellow = "\u001B[33m";  // Warna kuning khusus untuk kata "PETOPIA"
-        String reset = "\u001B[0m";    // Reset warna ke default terminal
-    
+        String white = "\u001B[37m"; // Warna putih untuk teks biasa
+        String yellow = "\u001B[33m"; // Warna kuning khusus untuk kata "PETOPIA"
+        String reset = "\u001B[0m"; // Reset warna ke default terminal
+
         String[] lines = {
-            white + "╔═══════════════════════════════════════════════════════════════════════╗",
-            "║>>>                        SELAMAT DATANG DI                        <<<║",
-            // ✨ Bagian ini akan menampilkan kata PETOPIA dengan warna kuning
-            "║>>                          <<< " + yellow + "PETOPIA" + white + " >>>                          <<║",
-            "║>>>                    Temukan Sahabat Terbaikmu                    <<<║",
-            "╚═══════════════════════════════════════════════════════════════════════╝" + reset
+                white + "╔═══════════════════════════════════════════════════════════════════════╗",
+                "║>>>                        SELAMAT DATANG DI                        <<<║",
+                // ✨ Bagian ini akan menampilkan kata PETOPIA dengan warna kuning
+                "║>>                          <<< " + yellow + "PETOPIA" + white + " >>>                          <<║",
+                "║>>>                    Temukan Sahabat Terbaikmu                    <<<║",
+                "╚═══════════════════════════════════════════════════════════════════════╝" + reset
         };
         // 🔁 Loop untuk mencetak setiap baris dengan efek ketik
         for (String line : lines) {
             for (char c : line.toCharArray()) {
                 System.out.print(c); // Cetak karakter satu per satu
                 // ⏱️ Delay 2ms antar karakter untuk efek ketik
-                try { Thread.sleep(2); } catch (InterruptedException e) { }
+                try {
+                    Thread.sleep(2);
+                } catch (InterruptedException e) {
+                }
             }
-            System.out.println();  // ❌ Jika thread terganggu, abaikan saja
-            try { Thread.sleep(100); } catch (InterruptedException e) { }
+            System.out.println(); // ❌ Jika thread terganggu, abaikan saja
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+            }
         }
     }
 
@@ -132,7 +138,7 @@ public class function {
         System.out.print("Pilih bagian yang ingin diedit: ");
     }
 
-    // 📌Function display rating 
+    // 📌Function display rating
     public static void displayRating() {
         System.out.println("\n╔════════════════════════════════════════════════════════════════════════╗");
         System.out.println("║                           Penjelasan Rating                            ║");
@@ -160,37 +166,38 @@ public class function {
     // 📌Function display by faiz nation (Footer)
     public static void displayFaizNation() {
         // 🎨 Kode warna ANSI
-        String white = "\u001B[37m";   // Warna putih untuk teks biasa
-        String yellow = "\u001B[33m";  // Warna kuning khusus untuk kata "PETOPIA"
-        String reset = "\u001B[0m";    // Reset warna ke default terminal
+        String white = "\u001B[37m"; // Warna putih untuk teks biasa
+        String yellow = "\u001B[33m"; // Warna kuning khusus untuk kata "PETOPIA"
+        String reset = "\u001B[0m"; // Reset warna ke default terminal
         // 📝 Daftar baris yang akan ditampilkan dengan kombinasi warna
         String[] lines = {
-            white + "╔════════════════════════════════════════════════════════════════════════╗",
-            "║>>>           TERIMAKASIH TELAH MENGGUNAKAN APLIKASI SAYA            <<<║",
-            "║>>                  <<< " + yellow + "FADLY FAIS FAJARRUDDIN" + white + " >>>                    <<║",
-            "║>>>                           24111814015                            <<<║",
-            "╠════════════════════════════════════════════════════════════════════════╣",
-            "║>>>                                                                  <<<║",
-            "║>>                    " + yellow + "ehh udah lebaran aja nih wkwk" + white + "                   <<║",
-            "║>>                 " + yellow + "Minal Aidzin Wal Faidzin yagess!!!" + white + "                 <<║",
-            "║>>>                                                                  <<<║",
-            "╚════════════════════════════════════════════════════════════════════════╝" + reset
+                white + "╔════════════════════════════════════════════════════════════════════════╗",
+                "║>>>           TERIMAKASIH TELAH MENGGUNAKAN APLIKASI SAYA            <<<║",
+                "║>>                  <<< " + yellow + "FADLY FAIS FAJARRUDDIN" + white + " >>>                    <<║",
+                "║>>>                           24111814015                            <<<║",
+                "╠════════════════════════════════════════════════════════════════════════╣",
+                "║>>>                                                                  <<<║",
+                "║>>                    " + yellow + "ehh udah lebaran aja nih wkwk" + white + "                   <<║",
+                "║>>                 " + yellow + "Minal Aidzin Wal Faidzin yagess!!!" + white + "                 <<║",
+                "║>>>                                                                  <<<║",
+                "╚════════════════════════════════════════════════════════════════════════╝" + reset
         };
         // 🖋️ Efek ketik baris demi baris
         for (String line : lines) {
             for (char c : line.toCharArray()) {
                 System.out.print(c); // Cetak karakter satu per satu
-                try { Thread.sleep(2); 
-                } catch (InterruptedException e) { 
-                     }// ⏳ Delay antar karakter (2ms untuk efek ketik cepat)
+                try {
+                    Thread.sleep(2);
+                } catch (InterruptedException e) {
+                } // ⏳ Delay antar karakter (2ms untuk efek ketik cepat)
             }
             System.out.println(); // Baris baru setelah selesai satu baris
-            try { Thread.sleep(80); // ⏳ Delay antar baris
-            } catch (InterruptedException e) { 
+            try {
+                Thread.sleep(80); // ⏳ Delay antar baris
+            } catch (InterruptedException e) {
             }
         }
     }
-    
 
     // 📌Function display daftar jenis pet
     public static void displayDaftarJenis() {
@@ -205,4 +212,72 @@ public class function {
         System.out.println("╚════════════════════════════════════════════════════════════════════════╝");
     }
 
+    public static void retroSpinner(String pesan, int durasiMillis) {
+        String[] frames = { ".  ", ".. ", "...", " ..", "  .", "   " };
+        long endTime = System.currentTimeMillis() + durasiMillis;
+
+        while (System.currentTimeMillis() < endTime) {
+            for (String frame : frames) {
+                if (System.currentTimeMillis() >= endTime)
+                    break;
+                System.out.print("\r" + pesan + frame);
+                try {
+                    Thread.sleep(150);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+        }
+        System.out.print("\r" + pesan + " DONE!!!\n");
+    }
+
+    public static void progressBarWithPercentage(String pesan, int durasiMillis) {
+        int totalBars = 30;
+        long startTime = System.currentTimeMillis();
+        long endTime = startTime + durasiMillis;
+
+        while (System.currentTimeMillis() < endTime) {
+            long elapsed = System.currentTimeMillis() - startTime;
+            int progress = (int) ((elapsed * totalBars) / durasiMillis);
+            int percentage = (int) ((elapsed * 100) / durasiMillis);
+
+            StringBuilder bar = new StringBuilder();
+            for (int i = 0; i < totalBars; i++) {
+                bar.append(i < progress ? "■" : " ");
+            }
+
+            System.out.printf("\r%s [%s] %3d%%", pesan, bar.toString(), Math.min(percentage, 100));
+
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        System.out.printf("\r%s [%s] 100%% \n", pesan, "■".repeat(totalBars));
+    }
+
+    public static void spinnerLoading(String pesan, int durasiMillis) {
+        String[] spinner = { "|", "/", "-", "\\" };
+        long endTime = System.currentTimeMillis() + durasiMillis;
+
+        System.out.print(pesan + " ");
+        int i = 0;
+        while (System.currentTimeMillis() < endTime) {
+            System.out.print("\b" + spinner[i % spinner.length]);
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            i++;
+        }
+        System.out.print("\bDONE!!!");
+        System.out.println(" [SUCCESS]");
+    }
+
+    public static void spasi () {
+        System.out.println("");
+    }
 }

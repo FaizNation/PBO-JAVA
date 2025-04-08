@@ -63,6 +63,7 @@ public class serviceBird {
         System.out.print("Masukkan nomor pet burung yang ingin dilihat: ");
         int pilihan = scanner.nextInt();
         scanner.nextLine(); 
+        
         // ⚠️ apakah nomor yang dipilih valid
         if (pilihan < 1 || pilihan > listburung.size()) {
             System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
@@ -77,6 +78,8 @@ public class serviceBird {
             // 🦜 Mengkonversi petDipilih menjadi objek burung
             burung oiseau = (burung) petDipilih;
             // 🖼️ Menampilkan header detail
+            function.spasi();
+            function.spinnerLoading("MenCari data pet ", 2000);
             System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
             System.out.printf("║ %-69s ║\n", "  [SUCCESS] | Menampilkan Detail burung " + oiseau.getrasPet());
             System.out.println("╠═══════════════════════════════════════════════════════════════════════╣");
@@ -177,7 +180,9 @@ public class serviceBird {
                         break;
                     case 0: // 🚪 Keluar dari mode edit
                         editing = false;
-                        System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
+                        function.spasi();
+                        function.retroSpinner("Menyimpan perubahan", 1500);// 🌀 Tampilkan animasi keluar
+                        System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
                         System.out.println("║                   [SUCCESS] | BERHASIL MENGEDIT PET                   ║");
                         System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
                         break;

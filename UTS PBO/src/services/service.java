@@ -114,6 +114,8 @@ public class service {
             System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
             return;
         } else {
+            function.spasi();
+            function.spinnerLoading("MenCari data pet ", 2000);
             int i = 1; // 🔢 Nomor urut
              // 📋 Header tampilan daftar pet
             System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
@@ -166,6 +168,8 @@ public class service {
         System.out.print("Masukkan harga pet yang dicari: "); // 🧾 Input harga dari user
         double hargaDicari = scanner.nextDouble();
         scanner.nextLine();
+        function.spasi();
+        function.spinnerLoading("MenCari data pet ", 2000);
 
         // 🔍 Panggil method dari class petList untuk cari pet dengan harga tertentu
         List<petList> hasil = petList.cariSemuaPetByHarga(listPet, hargaDicari);
@@ -212,6 +216,8 @@ public class service {
         System.out.print("Masukkan ras pet yang dicari: ");// 📝 Input ras pet dari user
         String rasDicari = scanner.nextLine().toLowerCase();//Manipulasi string untuk mengkorversi huruf jadi kecil
 
+        function.spasi();
+        function.spinnerLoading("MenCari data pet ", 2000);
         // 🔄 Searching menggunakan Comparator 🔄
         List<petList> hasil = petList.cariPetListJenis(listFusion, jenisDicari, rasDicari);
         // ✅ Jika hasil ditemukan
@@ -303,7 +309,8 @@ public class service {
         if (!keranjang.isEmpty()) {
             double totalHarga = 0; // 💰 Total harga
             double totalDiskon = 0; // 💸 Total diskon
-
+            function.spasi();
+            function.progressBarWithPercentage("bentar bang loading", 3000);
             System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
             System.out.println("║                         Detail Pembelian Pet                          ║");
             System.out.println("╠═══════════════════════════════════════════════════════════════════════╣");
@@ -349,6 +356,8 @@ public class service {
 
     // 📌 Function untuk menampilkan daftar pet berdasarkan harga
     public static void displayPetsHarga() {
+        function.spasi();
+        function.spinnerLoading("MenCari data pet ", 2000);
         // 📦 Gabungkan semua pet ke dalam satu list
         List<petList> listPet = new ArrayList<>();
         listPet.addAll(listKucing); // 🐱

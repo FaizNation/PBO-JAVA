@@ -75,6 +75,8 @@ public class serviceFish {
         // ✅ Pastikan objek tersebut benar-benar instance dari class ikan
         if (petDipilih instanceof ikan) { // instaceof untuk mengecek apakah petDipilih adalah ikan
             ikan poisson = (ikan) petDipilih;// 🐠 Mengkonversi petDipilih menjadi objek ikan
+            function.spasi();
+            function.spinnerLoading("MenCari data pet ", 2000);
             // 🖼️ Menampilkan header detail
             System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
             System.out.printf("║ %-69s ║\n", "  [SUCCESS] | Menampilkan Detail ikan " + poisson.getrasPet());
@@ -176,7 +178,9 @@ public class serviceFish {
                         break;
                     case 0: // 🚪 Keluar dari mode edit
                         editing = false;
-                        System.out.println("\n╔═══════════════════════════════════════════════════════════════════════╗");
+                        function.spasi();
+                        function.retroSpinner("Menyimpan perubahan", 1500);// 🌀 Tampilkan animasi keluar
+                        System.out.println("╔═══════════════════════════════════════════════════════════════════════╗");
                         System.out.println("║                   [SUCCESS] | BERHASIL MENGEDIT PET                   ║");
                         System.out.println("╚═══════════════════════════════════════════════════════════════════════╝");
                         break;
