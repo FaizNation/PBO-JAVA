@@ -120,7 +120,7 @@ public class petList {
                 hasil.add(pet);
             }
         }
-        return hasil;
+        return null;
     }
 
     // 🔹 Mencari Pet Berdasarkan Jenis & Ras
@@ -132,7 +132,7 @@ public class petList {
                 hasil.add(pet);
             }
         }
-        return hasil;
+        return null;
     }
     
     // 🔹 QuickSort Berdasarkan Jenis Pet
