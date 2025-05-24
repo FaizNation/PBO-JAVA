@@ -16,16 +16,11 @@ public class MahasiswaService {
         // Data awal
         Jurusan jurusanTI = new Jurusan(1L, "Teknik Informatika");
         Jurusan jurusanSI = new Jurusan(2L, "Sistem Informasi");
-        Jurusan jurusanh = new Jurusan(2L, "Hukum");
-        Jurusan jurusanM = new Jurusan(2L, "Manajemen");
-        Jurusan jurusanI = new Jurusan(2L, "ilmu komunikasi");
         jurusanList.add(jurusanTI);
         jurusanList.add(jurusanSI);
-        jurusanList.add(jurusanh);
-        jurusanList.add(jurusanM);
-        jurusanList.add(jurusanI);
 
-        mahasiswaList.add(new Mahasiswa(1L, "Fadly", jurusanTI));
+        mahasiswaList.add(new Mahasiswa(1L, "Wahyu", jurusanTI));
+        mahasiswaList.add(new Mahasiswa(2L, "Andi", jurusanSI));
     }
 
     // CRUD Mahasiswa
